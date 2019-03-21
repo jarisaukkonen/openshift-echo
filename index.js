@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const port = process.env['PORT'] || 8080;
 
 app.get('*', (req, res) => {
   data = {
@@ -15,4 +16,4 @@ app.get('*', (req, res) => {
   res.type('json').send(data)
 })
 
-app.listen(8080, () => console.log('echo listening on port 8080'))
+app.listen(port, () => console.log(`echo listening on port ${port}`))
